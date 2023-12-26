@@ -1,0 +1,7 @@
+@use '_variables' as * ; 
+@use '_normalize' as * ; 
+
+p {
+    color : $kasa-salmon;
+    font-family: $kasa-police; 
+}

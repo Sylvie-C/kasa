@@ -1,0 +1,12 @@
+@font-face {
+  font-family: montserrat;
+  src: url("/src/fonts/montserrat.ttf");
+}
+/* @font-face {
+    font-family: 'sevillana' ; 
+    src: url("/src/fonts/sevillana.ttf") ; 
+} */
+p {
+  color: #FF6060;
+  font-family: "montserrat";
+}
