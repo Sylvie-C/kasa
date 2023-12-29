@@ -1,13 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/index.css';
-import Header from './components/Header.js';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./styles/scss/main.scss";
+import Header from "./components/Header/Header.jsx";
+import Apropos from "./pages/Apropos/Apropos.jsx";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Header />
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/Apropos" element={<Apropos />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

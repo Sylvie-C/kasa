@@ -1,6 +1,12 @@
-
-// default police
 @font-face {
     font-family: montserrat ; 
-    src: url("/src/fonts/montserrat.ttf") ;
+    src: url("../../assets/fonts/montserrat.ttf") ; 
+}
+@font-face { 
+    font-family: script ; 
+    src: url("../../assets/fonts/script.ttf") ; 
+}
+
+.Link {
+    color : aqua ; 
 }
