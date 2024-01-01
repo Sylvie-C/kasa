@@ -1,6 +1,23 @@
-
-// default police
 @font-face {
     font-family: montserrat ; 
-    src: url("/src/fonts/montserrat.ttf") ;
+    src: url("../../assets/fonts/montserrat.ttf") ; 
+}
+@font-face { 
+    font-family: script ; 
+    src: url("../../assets/fonts/script.ttf") ; 
+}
+
+* {
+    font-family: montserrat;
+}
+
+body {
+    margin: 0; 
+    padding: 30px 40px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
 }
