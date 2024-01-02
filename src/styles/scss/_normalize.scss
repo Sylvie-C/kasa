@@ -1,3 +1,5 @@
+@use "./variables" as * ; 
+
 @font-face {
     font-family: montserrat ; 
     src: url("../../assets/fonts/montserrat.ttf") ; 
@@ -8,16 +10,16 @@
 }
 
 * {
-    font-family: montserrat;
+    font-family: $kasa-font;
+    color: $kasa-color;
 }
 
-body {
-    margin: 0; 
-    padding: 30px 40px;
+html , body , #root , .appContainer {
+    // height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 20px 10px;
-    }
+    
 }
