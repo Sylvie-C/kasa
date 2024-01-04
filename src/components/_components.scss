@@ -26,17 +26,6 @@
     &__logo {
         width: 210px;
     }
-
-    @media (max-width: 768px) {
-        &__logo {
-            width: 100px;
-        }
-
-        &__link {
-            font-size: 12px;
-            margin-left: 10px;
-        }
-    }
 }
 
 
@@ -46,17 +35,16 @@
     height: 150px;
     border-radius: 20px;
 
-    background-image: url("../assets/images/home-img.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-y: -160px;
+    background-image: url("../assets/images/home-bannerImg.png");
+    background-size: cover;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     &__title {
-        font-family: monserrat;
+        font-family: inherit;
+        font-weight: 400;
         color: white;
 
         display: flex;
@@ -67,28 +55,6 @@
         width: 100%;
         height: 100%;
         border-radius: 20px;
-    }
-}
-
-
-// Home page pictures Gallery
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 30%);
-    gap: 2%;
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px;
-    border-radius: 20px;
-    background: lightgray;
-
-    &__card {
-        // width: 100px; 
-        height: 100px;
-        background: $kasa-color;
     }
 }
 
@@ -112,5 +78,37 @@
     img {
         margin: 20px;
         width: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 10px;
+
+        &__logo {
+            width: 100px;
+        }
+
+        &__link {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    }
+
+    .hero {
+        width: 100%;
+        height: 80px;
+        font-size: 12px;
+        border-radius: 10px;
+
+        &__title {
+            font-size: 14px;
+
+            border-radius: 10px;
+
+            padding: 0 10px;
+            justify-content: flex-start;
+        }
     }
 }

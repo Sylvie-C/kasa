@@ -1,6 +1,6 @@
 function Apropos() {
   return (
-    <div>
+    <div className="pageContent">
       ICI PAGE À PROPOS
     </div> 
   ); 

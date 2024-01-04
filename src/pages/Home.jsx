@@ -1,11 +1,11 @@
 import Hero from "../components/Hero" ; 
-import Gallery from "../components/Gallery" ; 
+import GalleryCards from "../components/GalleryCards";
 
 function Home() {
     return (
-        <div className="homepage">
+        <div className="homepage pageContent">
             <Hero/> 
-            <Gallery/>
+            <GalleryCards/>
         </div>
     )
 }

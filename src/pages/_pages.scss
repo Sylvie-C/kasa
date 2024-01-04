@@ -1,26 +1,104 @@
+@use "../styles/scss/variables" as *;
+
+// HOME PAGE
+
+// Home page pictures Gallery
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    gap: 2%;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+    margin: 30px 0;
+
+    overflow: scroll;
+    border-radius: 20px;
+    background: rgb(245, 245, 245);
+
+    &__card {
+        text-decoration: none;
+        background: $kasa-color;
+        border-radius: 10px;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 2%;
+
+        overflow: hidden;
+
+        img {
+            border-radius: 10px;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        p {
+            font-size: 0.84em;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            line-height: 20px;
+
+            margin-top: 10px;
+            height: 40px;
+        }
+    }
+}
+
 
 // 404 ERROR PAGE
 
 .errorpage {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     align-items: center;
 
-    padding: 50px; 
+    padding: 50px;
     row-gap: 50px;
 
     &__title {
-        font-size: 150px;
-        font-weight: bolder; 
+        font-size: 9.35em;
+        font-weight: bolder;
     }
 
     &__text {
         font-size: 18px;
-        font-weight: 500; 
+        font-weight: 500;
     }
 
     &__link {
         font-size: 12px;
         margin: 20px;
+    }
+}
+
+
+// media queries
+@media (max-width: 768px) {
+
+    // HOME PAGE
+    .gallery {
+        grid-template-columns: none;
+        gap: 12px;
+        margin: 10px 0;
+        padding: 0;
+        overflow: auto;
+
+        border-radius: none;
+        background: none;
+    }
+
+    // ERROR PAGE
+    .errorpage {
+        &__title {
+            font-size: 2em;
+            font-weight: bold;
+        }
     }
 }

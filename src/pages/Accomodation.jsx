@@ -1,7 +1,9 @@
+
+
 function Accomodation() {
     return (
-        <div>
-            ACCOMODATION PAGE HERE
+        <div className="pageContent">
+            PAGE ACCOMODATION ICI : 
         </div>
     )
 }
