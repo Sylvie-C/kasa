@@ -1,6 +1,35 @@
+@use "./variables" as *;
 
-// default police
 @font-face {
-    font-family: montserrat ; 
-    src: url("/src/fonts/montserrat.ttf") ;
+    font-family: montserrat;
+    src: url("../../assets/fonts/montserrat.ttf");
+}
+
+@font-face {
+    font-family: script;
+    src: url("../../assets/fonts/script.ttf");
+}
+
+* {
+    font-family: $kasa-font;
+    color: $kasa-color;
+}
+
+html,
+body,
+#root,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.pageContent {
+    padding: 20px 50px;
+}
+
+@media (max-width: 768px) {
+
+    .pageContent {
+        padding: 12px;
+    }
 }
