@@ -6,48 +6,55 @@
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 30%);
-    gap: 2%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
 
     justify-content: center;
     align-items: center;
 
-    padding: 30px;
-    margin: 30px 0;
+    padding: 48px;
+    margin: 48px 0;
 
-    overflow: scroll;
-    border-radius: 20px;
+    border-radius: 16px;
     background: rgb(245, 245, 245);
 
     &__card {
         text-decoration: none;
-        background: $kasa-color;
-        border-radius: 10px;
-        padding: 10px;
+        border-radius: 16px;
+        position: relative;
 
         display: flex;
         flex-direction: column;
-        row-gap: 2%;
+        row-gap: 48px;
 
         overflow: hidden;
 
         img {
-            border-radius: 10px;
-            width: 100%;
-            height: 200px;
+            border-radius: 16px;
             object-fit: cover;
+            aspect-ratio: 1/1;
         }
 
         p {
-            font-size: 0.84em;
-            font-weight: 500;
-            color: white;
-            text-decoration: none;
-            line-height: 20px;
+            position: absolute;
+            bottom: 0;
+            margin: 8px;
+            padding: 0 8px;
+            border-radius: 8px;
 
-            margin-top: 10px;
-            height: 40px;
+            font-size: 16px;
+            text-decoration: none;
+            color: $kasa-color;
         }
+    }
+
+    &__cardLayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent 70%, black);
     }
 }
 
@@ -59,36 +66,36 @@
     flex-direction: column;
     align-items: center;
 
-    padding: 50px;
-    row-gap: 50px;
+    padding: 48px;
+    row-gap: 48px;
 
     &__title {
-        font-size: 9.35em;
+        font-size: 128px;
         font-weight: bolder;
     }
 
     &__text {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
     }
 
     &__link {
         font-size: 12px;
-        margin: 20px;
+        margin: 16px;
     }
 }
 
 
-// media queries
+// -------  MEDIA QUERIES  ------- 
+
 @media (max-width: 768px) {
 
     // HOME PAGE
     .gallery {
         grid-template-columns: none;
-        gap: 12px;
-        margin: 10px 0;
+        gap: 16px;
+        margin: 8px 0;
         padding: 0;
-        overflow: auto;
 
         border-radius: none;
         background: none;
@@ -97,7 +104,7 @@
     // ERROR PAGE
     .errorpage {
         &__title {
-            font-size: 2em;
+            font-size: 32px;
             font-weight: bold;
         }
     }

@@ -11,6 +11,7 @@ function Home() {
                     galleryResource.map ( (elt) => (	
                         
                         <Link to="/accomodation/" className="gallery__card" key={elt.id}> 
+                            <div className="gallery__cardLayer"></div>
                             <img src={elt.cover} alt="appartement"></img>
                             <p>{elt.title}</p>
                         </Link> 
