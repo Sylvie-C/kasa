@@ -4,7 +4,7 @@ import aboutText from "../data/about_text.json";
 
 function About() {
   return (
-    <div className="pageContent">
+    <div className="pageContent aboutPage">
       <Hero heroImg="aboutHero"/>
       {
         aboutText.map ( (elt) => (

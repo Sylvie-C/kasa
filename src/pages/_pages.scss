@@ -1,12 +1,12 @@
 @use "../styles/scss/variables" as *;
 
-// HOME PAGE
+// -------  HOME PAGE
 
 // Home page pictures Gallery
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 340px);
     gap: 48px;
 
     justify-content: center;
@@ -20,7 +20,7 @@
 
     &__card {
         text-decoration: none;
-        border-radius: 16px;
+        border-radius: 10px;
         position: relative;
 
         display: flex;
@@ -30,7 +30,7 @@
         overflow: hidden;
 
         img {
-            border-radius: 16px;
+            border-radius: 10px;
             object-fit: cover;
             aspect-ratio: 1/1;
         }
@@ -59,18 +59,121 @@
 }
 
 
-// ABOUT PAGE
+// -------  ACCOMODATION PAGE 
 
-.collapse {
-    margin: 16px 10%;
+.accomodationPage {
 
-    display: flex;
-    flex-direction: column;
-    row-gap: 16px;
+    .info {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        row-gap: 16px;
+        margin: 16px 0;
+
+        &__titles {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        &__owner {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        &__tags {
+
+            display: flex;
+            column-gap: 16px;
+
+            p {
+                font-size: 10px;
+                color: white;
+                text-align: center;
+                background: $kasa-color;
+
+                border-radius: 10px;
+                width: 96px;
+                padding: 4px;
+            }
+
+        }
+
+        &__rate {
+            display: flex;
+            justify-content: flex-end;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .plainStar,
+            .emptyStar {
+                margin: 0 4px;
+            }
+
+            .plainStar {
+                fill: $kasa-color;
+            }
+
+            .emptyStar {
+                fill: lightgray;
+            }
+        }
+    }
+
+    .info__owner {
+        p {
+            font-size: 12px;
+            text-align: right;
+            line-height: 16px;
+        }
+
+        .ownerPix {
+            width: 80px;
+            aspect-ratio: 1/1;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0 8px;
+
+            background: lightgray;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    // Collapse component
+    .details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+        padding: 16px 0;
+    }
 }
 
 
-// 404 ERROR PAGE
+// -------  ABOUT PAGE 
+
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+
+// -------  404 ERROR PAGE
 
 .errorpage {
     display: flex;
@@ -112,10 +215,59 @@
         background: none;
     }
 
-    // ABOUT PAGE 
+    // ACCOMODATION PAGE
+    .accomodationPage {
+        &__coverImg {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 16px;
+        }
 
-    .about {
-        margin: 16px 0;
+        .arrowContainer {
+
+            .arrowLeft,
+            .arrowRight {
+                width: 24px;
+            }
+        }
+
+        h1 {
+            font-size: 16px;
+        }
+
+        .info {
+            grid-template-columns: repeat(2, 1fr);
+
+            &__titles {
+                grid-column: span 2;
+            }
+
+            &__tags {
+                order: 02;
+                grid-column: span 2;
+                align-items: center;
+            }
+
+            &__owner {
+                order: 04;
+
+                .ownerPix {
+                    font-size: 8px;
+                }
+            }
+
+            &__rate {
+                order: 03;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+
+        .details {
+            grid-template-columns: 100%;
+            row-gap: 8px;
+            column-gap: 0;
+        }
     }
 
     // ERROR PAGE
