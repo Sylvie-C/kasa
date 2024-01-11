@@ -29,13 +29,13 @@
 }
 
 
+// Home page , About page
 // Hero
 
 .hero {
     height: 160px;
     border-radius: 16px;
 
-    background-image: url("../assets/images/home-bannerImg.png");
     background-size: cover;
 
     display: flex;
@@ -56,6 +56,62 @@
         height: 100%;
         border-radius: 16px;
     }
+}
+
+.homeHero {
+    background-image: url("../assets/images/home-bannerImg.png");
+}
+
+.aboutHero {
+    background-image: url("../assets/images/about-bannerImg.png");
+}
+
+
+// ABOUT PAGE
+
+// Select bar component
+
+.collapse {
+    &__btn {
+        color: white;
+        background: $kasa-color;
+        font-family: montserrat;
+        border-radius: 4px;
+
+        padding: 8px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__text--hidden {
+        max-height: 0px;
+        overflow: hidden;
+
+        transform-origin: top;
+        transform: scaleY(0%);
+        transition: all 1s;
+    }
+
+    &__text--shown {
+        background: $kasa-lightgray;
+        border-radius: 4px;
+
+        max-height: 200px;
+        transform-origin: top;
+        transform: scaleY(100%);
+        transition: all 1s;
+    }
+}
+
+.collapseArrow {
+    width: 16px;
+    color: white;
+    transition: transform 1s;
+}
+
+.rotateCollapseArrow {
+    transform: rotate(180deg);
 }
 
 
@@ -85,6 +141,7 @@
 
     .header {
         padding: 16px;
+        padding-bottom: 0;
 
         &__logo {
             width: 96px;

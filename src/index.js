@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
-import Apropos from "./pages/Apropos.jsx";
+import About from "./pages/About.jsx";
 import Accomodation from "./pages/Accomodation.jsx";
 import Error from "./pages/Errorpage.jsx";
 
@@ -19,8 +19,8 @@ root.render(
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/apropos" element={<Apropos />} />
-                <Route path="/accomodation" element={<Accomodation />} />
+                <Route path="/apropos" element={<About />} />
+                <Route path="/accomodation/:accomodationId" element={<Accomodation />} />
                 <Route path="*" element={<Error />} />
             </Routes>
             <Footer />

@@ -3,18 +3,19 @@ import galleryResource from "../data/logements.json" ;
 import { Link } from "react-router-dom";
 
 function Home() {
+    
     return (
-        <div className="homepage pageContent">
-            <Hero/> 
+        <div className="pageContent">
+            <Hero heroImg="homeHero"/> 
+
             <section className="gallery">
                 { 
                     galleryResource.map ( (elt) => (	
-                        
-                        <Link to="/accomodation/" className="gallery__card" key={elt.id}> 
-                            <div className="gallery__cardLayer"></div>
-                            <img src={elt.cover} alt="appartement"></img>
-                            <p>{elt.title}</p>
-                        </Link> 
+                            <Link to= {`/accomodation/${elt.id}`} className="gallery__card" key={elt.id}> 
+                                <div className="gallery__cardLayer"></div>
+                                <img src={elt.cover} alt="appartement"></img>
+                                <p>{elt.title}</p>
+                            </Link> 
                         ) 
                     ) 
                 }
