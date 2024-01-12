@@ -8,6 +8,7 @@ function Slider ( {pictures , location} ) {
 */
 
     const [currentSlide, newSlide] = useState(0) ; 
+    // const [controlsDisplay , setVisible] = useState (true) ; 
     const lastSlide = (pictures.length)-1 ; 
 
     // on click on right arrow, "currentSlide" state value changes
@@ -25,10 +26,20 @@ function Slider ( {pictures , location} ) {
         else if (currentSlide === 0) { newSlide (lastSlide) } 
     }
 
+    // Hide controls arrows / slides numbers if just one picture
+    let arrowsContainer = "slider__arrowsContainer" ; 
+    let slideNumbers = "slider__number" ; 
+    if (pictures.length === 1) { 
+        arrowsContainer = "slider__hideControls" ; 
+        slideNumbers = "slider__hideControls" ; 
+    } 
+    console.log (arrowsContainer) ; 
+    console.log (pictures.length) ; 
+
     return (
         <div className="slider">
 
-            <div className="slider__arrowContainer">  
+            <div className={arrowsContainer}>  
                 <svg className="arrowLeft" onClick={moveBack} fill="none" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
                     <path fill="white" d="M70.0399 16.425L62.9199 9.34497L23.3599 48.945L62.9599 88.545L70.0399 81.465L37.5199 48.945L70.0399 16.425Z" />
                 </svg>
@@ -42,14 +53,12 @@ function Slider ( {pictures , location} ) {
                     alt={location} /> 
             }
 
-            <div className="slider__number">
+            <div className={slideNumbers}>
                 {currentSlide+1} / {pictures.length}
             </div>
 
         </div>
     )
-
-
 }
 
 export default Slider; 

@@ -1,12 +1,16 @@
-import galleryResource from "../data/logements.json" ; 
 import { useParams } from "react-router-dom";
+
+import galleryResource from "../data/logements.json" ; 
 import Slider from "../components/Slider" ; 
 import Collapse from "../components/Collapse";
 import StarRate from "../components/StarRate";  
 
+
 function Accomodation() {
+// Function to generate Accomodation page component. 
+
     // accomodation card selected by user (home page) : card id via URL
-    const {accomodationId} = useParams() ; 
+    const {accomodationId} = useParams() ;  
 
     // extraction of accomodation data from data file resource
     const accomodationData = (galleryResource.filter ( elt => ( elt.id === accomodationId )) )[0] ; 
@@ -23,12 +27,10 @@ function Accomodation() {
 
     return (
         <div className="pageContent accomodationPage">
-            
             <Slider 
                 pictures= {accomodationData.pictures} 
                 location= {accomodationData.location}
             />
-
             <div className="info">
 
                 <div className="info__titles">
@@ -55,13 +57,12 @@ function Accomodation() {
 
                 <StarRate rate={rate} />
             </div>
-
             <div className="details">
                 <Collapse id="description" title="Description" text={accomodationData.description} />
                 <Collapse id="equipments" title="Équipements" text={equipments} />
             </div>
-            
-        </div>
+        </div> 
     )
 }
+
 export default Accomodation ; 

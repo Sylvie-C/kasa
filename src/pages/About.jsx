@@ -6,11 +6,13 @@ function About() {
   return (
     <div className="pageContent aboutPage">
       <Hero heroImg="aboutHero"/>
-      {
-        aboutText.map ( (elt) => (
-          <Collapse key={elt.id} title={elt.title} text={elt.text} />
-        ))
-      }
+      <div className="aboutCollapse">
+        {
+          aboutText.map ( (elt) => (
+            <Collapse key={elt.id} title={elt.title} text={elt.text} />
+          ))
+        }
+      </div>
     </div> 
   ); 
 }

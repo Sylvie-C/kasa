@@ -6,7 +6,7 @@ function Home() {
     
     return (
         <div className="pageContent">
-            <Hero heroImg="homeHero"/> 
+            <Hero heroImg="homeHero" title="Chez vous, partout et ailleurs"/> 
 
             <section className="gallery">
                 { 

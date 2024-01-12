@@ -1,8 +1,8 @@
 
-function Hero( { heroImg } ) {
+function Hero( { heroImg , title="" } ) {
   return (
     <section className= { `hero ${ heroImg }` }>
-      <h1 className="hero__title">Chez vous, partout et ailleurs</h1>
+      <h1 className="hero__title">{title}</h1>
     </section>
   );
 }
