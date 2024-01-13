@@ -16,7 +16,7 @@
     margin: 48px 0;
 
     border-radius: 16px;
-    background: rgb(245, 245, 245);
+    background: $kasa-lightgray;
 
     &__card {
         text-decoration: none;
@@ -28,6 +28,14 @@
         row-gap: 48px;
 
         overflow: hidden;
+
+        transform: scale(100%);
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(98%);
+            filter: drop-shadow(-5px -5px 10px $kasa-cardShadow);
+        }
 
         img {
             border-radius: 10px;

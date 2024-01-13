@@ -33,8 +33,6 @@ function Slider ( {pictures , location} ) {
         arrowsContainer = "slider__hideControls" ; 
         slideNumbers = "slider__hideControls" ; 
     } 
-    console.log (arrowsContainer) ; 
-    console.log (pictures.length) ; 
 
     return (
         <div className="slider">
