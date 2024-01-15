@@ -36,6 +36,7 @@
     border-radius: 16px;
 
     background-size: cover;
+    background-position: bottom;
 
     display: flex;
     justify-content: center;
@@ -127,6 +128,10 @@
     transition: transform 0.3s;
 
     margin-right: 8px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .rotateCollapseArrow {
