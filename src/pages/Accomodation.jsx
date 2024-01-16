@@ -31,7 +31,6 @@ function Accomodation() {
                 pictures= {accomodationData.pictures} 
                 location= {accomodationData.location}
             />
-
             <div className="info">
 
                 <div className="info__titles">
@@ -58,7 +57,6 @@ function Accomodation() {
 
                 <StarRate rate={rate} />
             </div>
-            
             <div className="details">
                 <Collapse id="description" title="Description" text={accomodationData.description} />
                 <Collapse id="equipments" title="Équipements" text={equipments} />
