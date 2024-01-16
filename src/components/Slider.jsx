@@ -8,7 +8,6 @@ function Slider ( {pictures , location} ) {
 */
 
     const [currentSlide, newSlide] = useState(0) ; 
-    // const [controlsDisplay , setVisible] = useState (true) ; 
     const lastSlide = (pictures.length)-1 ; 
 
     // on click on right arrow, "currentSlide" state value changes
