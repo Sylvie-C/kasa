@@ -13,7 +13,8 @@
 
     &__link {
         color: $kasa-color ;
-        font-size: 16px;
+        font-size: 20px;
+        font-weight: 500;
         margin-left: 32px;
 
         text-decoration: none;
@@ -151,7 +152,7 @@
 
     &__coverImg {
         width: 100%;
-        aspect-ratio: 16/4;
+        aspect-ratio: 16/5;
         object-fit: cover;
         object-position: 0% 60%;
         border-radius: 16px;
@@ -166,7 +167,7 @@
 
         .arrowLeft,
         .arrowRight {
-            width: 48px;
+            width: 96px;
 
             &:hover {
                 cursor: pointer;
