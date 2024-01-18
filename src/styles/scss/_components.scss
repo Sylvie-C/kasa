@@ -9,13 +9,12 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 32px 48px;
+    padding: 32px 96px;
 
     &__link {
         color: $kasa-color ;
         font-size: 20px;
-        font-weight: 500;
-        margin-left: 32px;
+        margin-left: 64px;
 
         text-decoration: none;
     }
@@ -79,8 +78,8 @@
 
         width: $kasa-collapseDefaultW;
         background: $kasa-color;
-        border-radius: 4px;
-        padding: 8px 0;
+        border-radius: 8px;
+        padding: 12px 0;
         margin-top: 16px;
 
         display: flex;
@@ -124,11 +123,11 @@
 }
 
 .collapseArrow {
-    width: 16px;
+    width: 22px;
     color: white;
     transition: transform 0.3s;
 
-    margin-right: 8px;
+    margin-right: 24px;
 
     &:hover {
         cursor: pointer;
@@ -187,6 +186,34 @@
         color: white;
         position: absolute;
         bottom: 0;
+        margin: 32px;
+    }
+}
+
+.accomodationPage {
+    .info {
+        &__rate {
+            display: flex;
+            justify-content: flex-end;
+
+            svg {
+                width: 24px;
+                height: auto;
+            }
+
+            .plainStar,
+            .emptyStar {
+                margin: 0 4px;
+            }
+
+            .plainStar {
+                fill: $kasa-color;
+            }
+
+            .emptyStar {
+                fill: lightgray;
+            }
+        }
     }
 }
 
@@ -197,19 +224,18 @@
     background-color: black;
     color: white;
 
-    font-weight: 500;
     font-family: montserrat;
-    font-size: 16px;
+    font-size: 20px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    padding: 16px;
+    padding: 32px;
 
     img {
-        margin: 16px;
-        width: 64px;
+        margin: 32px;
+        width: 112px;
     }
 }
 
@@ -225,7 +251,7 @@
 
         &__link {
             font-size: 12px;
-            margin-left: 8px;
+            margin-left: 32px;
             text-transform: uppercase;
         }
     }
@@ -250,6 +276,8 @@
 
         &__btn {
             font-size: 12px;
+            padding: 6px 0;
+            border-radius: 4px;
         }
 
         &__text--shown,
@@ -260,6 +288,9 @@
     }
 
     .slider {
+        &__coverImg {
+            aspect-ratio: 16/13;
+        }
 
         .arrowLeft,
         .arrowRight {
@@ -268,6 +299,14 @@
 
         &__number {
             font-size: 12px;
+        }
+    }
+
+    .footer {
+        font-size: 10px;
+
+        &__logo {
+            margin-bottom: 10px;
         }
     }
 }

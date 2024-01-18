@@ -50,7 +50,6 @@
             border-radius: 8px;
 
             font-size: 16px;
-            font-weight: 500;
             text-decoration: none;
             color: white;
             line-height: 28px;
@@ -84,7 +83,7 @@
             justify-content: flex-end;
 
             p {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
 
@@ -100,7 +99,7 @@
             column-gap: 16px;
 
             p {
-                font-size: 10px;
+                font-size: 12px;
                 color: white;
                 text-align: center;
                 background: $kasa-color;
@@ -111,36 +110,12 @@
             }
 
         }
-
-        &__rate {
-            display: flex;
-            justify-content: flex-end;
-
-            svg {
-                width: 16px;
-                height: 16px;
-            }
-
-            .plainStar,
-            .emptyStar {
-                margin: 0 4px;
-            }
-
-            .plainStar {
-                fill: $kasa-color;
-            }
-
-            .emptyStar {
-                fill: lightgray;
-            }
-        }
     }
 
     .info__owner {
         p {
-            width: 144px;
+            // width: 144px;
             font-size: 16px;
-            font-weight: 500;
             text-align: right;
             line-height: 24px;
         }
@@ -209,7 +184,6 @@
 
     &__text {
         font-size: 16px;
-        font-weight: 500;
     }
 
     &__link {
@@ -255,10 +229,16 @@
         }
 
         .info {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 0.5fr);
+            margin: 8px 0;
 
             &__titles {
                 grid-column: span 2;
+
+                p {
+                    font-size: 12px;
+                    line-height: 32px;
+                }
             }
 
             &__tags {
@@ -279,6 +259,10 @@
                 order: 03;
                 justify-content: flex-start;
                 align-items: center;
+
+                svg {
+                    width: 16px;
+                }
             }
         }
 
