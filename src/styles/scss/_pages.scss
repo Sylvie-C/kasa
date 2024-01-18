@@ -1,4 +1,4 @@
-@use "../styles/scss/variables" as *;
+@use "./variables" as *;
 
 // -------  HOME PAGE
 
@@ -307,5 +307,11 @@
             font-size: 32px;
             font-weight: bold;
         }
+    }
+}
+
+@media ((min-width: 769px) and (max-width: 1024px)) {
+    .gallery {
+        grid-template-columns: repeat(2, $kasa-accomodationCardWidth);
     }
 }

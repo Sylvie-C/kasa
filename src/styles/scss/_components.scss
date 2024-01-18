@@ -1,5 +1,5 @@
-@use '../styles/scss/normalize' as *;
-@use '../styles/scss/variables' as *;
+@use './normalize' as *;
+@use './variables' as *;
 
 
 // Header
@@ -59,11 +59,11 @@
 }
 
 .homeHero {
-    background-image: url("../assets/images/home-bannerImg.png");
+    background-image: url("../../assets/images/home-bannerImg.png");
 }
 
 .aboutHero {
-    background-image: url("../assets/images/about-bannerImg.png");
+    background-image: url("../../assets/images/about-bannerImg.png");
 }
 
 
