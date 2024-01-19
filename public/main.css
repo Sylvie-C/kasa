@@ -355,7 +355,7 @@ p {
   text-align: center;
   background: #FF6060;
   border-radius: 10px;
-  width: 96px;
+  min-width: 96px;
   padding: 4px;
 }
 .accomodationPage .info__owner p {

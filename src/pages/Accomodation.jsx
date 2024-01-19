@@ -18,6 +18,14 @@ function Accomodation() {
     // extraction of accomodation rate/mark from data file resource
     const rate = accomodationData.rating ; 
 
+    // host name with line return between name and surname
+    const hostInput = accomodationData.host.name.split(" ") ; 
+    let hostName = [] ; 
+    hostName[0] = hostInput[0] ; 
+    hostName[1] = <br key={`breakline01`}/> ; 
+    hostName[2] = hostInput[1] ; 
+
+
     // extraction equipments + text format
     let equipments = [] ; 
     for (let i=0; i<accomodationData.equipments.length; i++) {
@@ -39,7 +47,7 @@ function Accomodation() {
                 </div>
 
                 <div className="info__owner">
-                    {<p>{accomodationData.host.name}</p>}
+                    {<p>{hostName}</p>}
                     {
                         <div className="ownerPix">
                             <img src={accomodationData.host.picture} alt="host"/>
