@@ -29,11 +29,11 @@
 
         overflow: hidden;
 
-        transform: scale(100%);
+        transform: scale(1);
         transition: all 0.3s;
 
         &:hover {
-            transform: scale(98%);
+            transform: scale(0.98);
             filter: drop-shadow(-5px -5px 10px $kasa-cardShadow);
         }
 
@@ -204,7 +204,7 @@
         margin: 8px 0;
         padding: 0;
 
-        border-radius: none;
+        border-radius: 0px;
         background: none;
     }
 
