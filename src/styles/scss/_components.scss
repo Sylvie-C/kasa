@@ -78,24 +78,22 @@
 
         width: $kasa-collapseDefaultW;
         background: $kasa-color;
-        border-radius: 8px;
-        padding: 12px 0;
-        margin-top: 16px;
+        border-radius: $kasa-smallRadius;
+        padding: 10px 20px 10px 10px;
 
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         .btnText {
             color: white;
             font-family: montserrat;
-            margin-left: 8px;
         }
     }
 
     &__text--hidden,
     &__text--shown {
         font-size: 14px;
-        box-sizing: border-box;
         width: calc($kasa-collapseDefaultW - 2px);
     }
 
@@ -111,7 +109,7 @@
 
         text-align: justify;
         background: $kasa-lightgray;
-        border-radius: 0px 0px 4px 4px;
+        border-radius: 0px 0px 5px 5px;
 
         padding: 10px;
 
@@ -126,8 +124,6 @@
     width: 22px;
     color: white;
     transition: transform 0.3s;
-
-    margin-right: 24px;
 
     &:hover {
         cursor: pointer;
@@ -151,10 +147,10 @@
 
     &__coverImg {
         width: 100%;
-        aspect-ratio: 16/5;
+        height: 415px;
         object-fit: cover;
         object-position: 0% 60%;
-        border-radius: 16px;
+        border-radius: $kasa-bigRadius;
     }
 
     &__arrowsContainer {
@@ -186,7 +182,7 @@
         color: white;
         position: absolute;
         bottom: 0;
-        margin: 32px;
+        margin: 25px;
     }
 }
 
@@ -195,10 +191,10 @@
         &__rate {
             display: flex;
             justify-content: flex-end;
+            padding: 4px;
 
             svg {
-                width: 24px;
-                height: auto;
+                width: 36px;
             }
 
             .plainStar,
@@ -246,6 +242,8 @@
     }
 }
 
+// ---- MEDIA QUERIES ----
+
 @media (max-width: 768px) {
 
     .header {
@@ -276,15 +274,15 @@
     .collapse {
 
         &__btn {
+            width: $kasa-collapseDefaultW;
             font-size: 12px;
-            padding: 6px 0;
-            border-radius: 4px;
+            padding: 10px;
+            border-radius: 5px;
         }
 
         &__text--shown,
         &__text--hidden {
             font-size: 12px;
-            width: calc($kasa-collapseDefaultW - 2px);
         }
     }
 
@@ -294,7 +292,7 @@
 
     .slider {
         &__coverImg {
-            aspect-ratio: 16/13;
+            height: 255px;
         }
 
         .arrowLeft,

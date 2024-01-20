@@ -7,7 +7,9 @@ $kasa-collapseDefaultW : 100%;
 $kasa-collapseAboutW : 80%;
 $kasa-accomodationCardWidth: 1fr;
 
-$kasa-ownerPixWidth : 60px; // default width (desktop)
+$kasa-ownerPixWidth : 64px; // default width (desktop)
+$kasa-tagsMinWidthD : 115px; // collapse component button min-width for Desktop
+$kasa-tagsMinWidthM : 84px; // collapse component button min-width for Mobile
 
 $kasa-bigRadius: 25px;
 $kasa-smallRadius: 10px;

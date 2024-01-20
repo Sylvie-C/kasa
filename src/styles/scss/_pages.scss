@@ -73,17 +73,21 @@
 
     .info {
         display: grid;
-        grid-template-columns: 80% 20%;
-        row-gap: 16px;
-        margin: 16px 0;
+        grid-template-columns: 85% 15%;
 
         &__titles {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
 
+            h1 {
+                font-size: 36px;
+                line-height: 51px;
+                margin-top: 30px;
+            }
+
             p {
-                font-size: 14px;
+                font-size: 18px;
             }
         }
 
@@ -91,21 +95,26 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+
+            margin: 24px 0;
         }
 
         &__tags {
 
             display: flex;
-            column-gap: 16px;
+            column-gap: 10px;
+            height: 25px;
+            margin-top: 20px;
+            margin-bottom: 24px;
 
             p {
-                font-size: 12px;
+                font-size: 14px;
                 color: white;
                 text-align: center;
                 background: $kasa-color;
 
-                border-radius: 10px;
-                min-width: 96px;
+                border-radius: $kasa-smallRadius;
+                min-width: $kasa-tagsMinWidthD;
                 padding: 4px;
             }
 
@@ -114,14 +123,13 @@
 
     .info__owner {
         p {
-            font-size: 16px;
+            font-size: 18px;
             text-align: right;
             line-height: 24px;
         }
 
         .ownerPix {
             width: $kasa-ownerPixWidth;
-            aspect-ratio: 1/1;
 
             display: flex;
             align-items: center;
@@ -143,8 +151,16 @@
     .details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 16px;
-        padding: 16px 0;
+        column-gap: 76px;
+
+        .collapse {
+
+            &__btn,
+            &__text--hidden,
+            &__text--shown {
+                width: calc($kasa-collapseDefaultW - 30px); // padding of 10px + 20px left/right
+            }
+        }
     }
 }
 
@@ -228,20 +244,21 @@
             }
         }
 
-        h1 {
-            font-size: 16px;
-        }
-
         .info {
             grid-template-columns: repeat(2, 0.5fr);
-            margin: 8px 0;
 
             &__titles {
                 grid-column: span 2;
 
+                h1 {
+                    font-size: 18px;
+                    line-height: 25px;
+                    margin-top: 15px;
+                }
+
                 p {
-                    font-size: 12px;
-                    line-height: 32px;
+                    font-size: 14px;
+                    margin-top: 5px;
                 }
             }
 
@@ -249,6 +266,15 @@
                 order: 02;
                 grid-column: span 2;
                 align-items: center;
+
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 10px;
+
+                p {
+                    font-size: 10px;
+                    min-width: $kasa-tagsMinWidthM;
+                }
             }
 
             &__owner {
@@ -265,7 +291,6 @@
                 }
             }
 
-
             &__rate {
                 order: 03;
                 justify-content: flex-start;
@@ -279,8 +304,17 @@
 
         .details {
             grid-template-columns: 100%;
-            row-gap: 8px;
+            row-gap: 20px;
             column-gap: 0;
+
+            .collapse {
+
+                &__btn,
+                &__text--hidden,
+                &__text--shown {
+                    width: $kasa-collapseDefaultW;
+                }
+            }
         }
     }
 

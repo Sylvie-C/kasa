@@ -95,20 +95,18 @@ h1 {
 .collapse__btn {
   width: 100%;
   background: #FF6060;
-  border-radius: 8px;
-  padding: 12px 0;
-  margin-top: 16px;
+  border-radius: 10px;
+  padding: 10px 20px 10px 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .collapse__btn .btnText {
   color: white;
   font-family: montserrat;
-  margin-left: 8px;
 }
 .collapse__text--hidden, .collapse__text--shown {
   font-size: 14px;
-  box-sizing: border-box;
   width: calc(100% - 2px);
 }
 .collapse__text--hidden {
@@ -120,7 +118,7 @@ h1 {
 .collapse__text--shown {
   text-align: justify;
   background: #f5f5f5;
-  border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 5px 5px;
   padding: 10px;
   max-height: 200px;
   opacity: 1;
@@ -131,7 +129,6 @@ h1 {
   width: 22px;
   color: white;
   transition: transform 0.3s;
-  margin-right: 24px;
 }
 .collapseArrow:hover {
   cursor: pointer;
@@ -151,12 +148,12 @@ h1 {
 }
 .slider__coverImg {
   width: 100%;
-  aspect-ratio: 16/5;
+  height: 415px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 0% 60%;
      object-position: 0% 60%;
-  border-radius: 16px;
+  border-radius: 25px;
 }
 .slider__arrowsContainer {
   width: 100%;
@@ -183,16 +180,16 @@ h1 {
   color: white;
   position: absolute;
   bottom: 0;
-  margin: 32px;
+  margin: 25px;
 }
 
 .accomodationPage .info__rate {
   display: flex;
   justify-content: flex-end;
+  padding: 4px;
 }
 .accomodationPage .info__rate svg {
-  width: 24px;
-  height: auto;
+  width: 36px;
 }
 .accomodationPage .info__rate .plainStar,
 .accomodationPage .info__rate .emptyStar {
@@ -248,19 +245,19 @@ h1 {
     justify-content: flex-start;
   }
   .collapse__btn {
+    width: 100%;
     font-size: 12px;
-    padding: 6px 0;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 5px;
   }
   .collapse__text--shown, .collapse__text--hidden {
     font-size: 12px;
-    width: calc(100% - 2px);
   }
   .collapseArrow {
     width: 16px;
   }
   .slider__coverImg {
-    aspect-ratio: 16/13;
+    height: 255px;
   }
   .slider .arrowLeft,
   .slider .arrowRight {
@@ -336,45 +333,51 @@ h1 {
 
 .accomodationPage .info {
   display: grid;
-  grid-template-columns: 80% 20%;
-  row-gap: 16px;
-  margin: 16px 0;
+  grid-template-columns: 85% 15%;
 }
 .accomodationPage .info__titles {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
+.accomodationPage .info__titles h1 {
+  font-size: 36px;
+  line-height: 51px;
+  margin-top: 30px;
+}
 .accomodationPage .info__titles p {
-  font-size: 14px;
+  font-size: 18px;
 }
 .accomodationPage .info__owner {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin: 24px 0;
 }
 .accomodationPage .info__tags {
   display: flex;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  height: 25px;
+  margin-top: 20px;
+  margin-bottom: 24px;
 }
 .accomodationPage .info__tags p {
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   text-align: center;
   background: #FF6060;
   border-radius: 10px;
-  min-width: 96px;
+  min-width: 115px;
   padding: 4px;
 }
 .accomodationPage .info__owner p {
-  font-size: 16px;
+  font-size: 18px;
   text-align: right;
   line-height: 24px;
 }
 .accomodationPage .info__owner .ownerPix {
-  width: 60px;
-  aspect-ratio: 1/1;
+  width: 64px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -389,9 +392,11 @@ h1 {
 .accomodationPage .details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  -moz-column-gap: 16px;
-       column-gap: 16px;
-  padding: 16px 0;
+  -moz-column-gap: 76px;
+       column-gap: 76px;
+}
+.accomodationPage .details .collapse__btn, .accomodationPage .details .collapse__text--hidden, .accomodationPage .details .collapse__text--shown {
+  width: calc(100% - 30px);
 }
 
 .aboutPage {
@@ -448,24 +453,32 @@ h1 {
   .accomodationPage .arrowContainer .arrowRight {
     width: 24px;
   }
-  .accomodationPage h1 {
-    font-size: 16px;
-  }
   .accomodationPage .info {
     grid-template-columns: repeat(2, 0.5fr);
-    margin: 8px 0;
   }
   .accomodationPage .info__titles {
     grid-column: span 2;
   }
+  .accomodationPage .info__titles h1 {
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 15px;
+  }
   .accomodationPage .info__titles p {
-    font-size: 12px;
-    line-height: 32px;
+    font-size: 14px;
+    margin-top: 5px;
   }
   .accomodationPage .info__tags {
     order: 2;
     grid-column: span 2;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .accomodationPage .info__tags p {
+    font-size: 10px;
+    min-width: 84px;
   }
   .accomodationPage .info__owner {
     order: 4;
@@ -476,7 +489,7 @@ h1 {
   }
   .accomodationPage .info__owner .ownerPix {
     font-size: 8px;
-    width: 30px;
+    width: 32px;
   }
   .accomodationPage .info__rate {
     order: 3;
@@ -488,9 +501,12 @@ h1 {
   }
   .accomodationPage .details {
     grid-template-columns: 100%;
-    row-gap: 8px;
+    row-gap: 20px;
     -moz-column-gap: 0;
          column-gap: 0;
+  }
+  .accomodationPage .details .collapse__btn, .accomodationPage .details .collapse__text--hidden, .accomodationPage .details .collapse__text--shown {
+    width: 100%;
   }
   .aboutPage .collapse__btn {
     width: 100%;
