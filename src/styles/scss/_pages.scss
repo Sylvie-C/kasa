@@ -168,8 +168,13 @@
 // -------  ABOUT PAGE 
 
 .aboutPage {
-    display: flex;
-    flex-direction: column;
+
+    &__collapseContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        margin: 38px 0;
+    }
 
     .collapse__btn {
         width: $kasa-collapseAboutW;
@@ -322,13 +327,17 @@
 
     // ABOUT PAGE 
     .aboutPage {
+        &__collapseContainer {
+            row-gap: 20px;
+        }
+
         .collapse__btn {
-            width: $kasa-collapseDefaultW;
+            width: calc($kasa-collapseDefaultW - 20px); // padding left/right : 10px + 10px
         }
 
         .collapse__text--shown,
         .collapse__text--hidden {
-            width: calc($kasa-collapseDefaultW - 2px);
+            width: calc($kasa-collapseDefaultW - 22px);
         }
     }
 

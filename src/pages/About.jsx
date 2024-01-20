@@ -6,7 +6,7 @@ function About() {
   return (
     <div className="pageContent aboutPage">
       <Hero heroImg="aboutHero"/>
-      <div className="aboutCollapse">
+      <div className="aboutPage__collapseContainer">
         {
           aboutText.map ( (elt) => (
             <Collapse key={elt.id} title={elt.title} text={elt.text} />

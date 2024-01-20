@@ -399,9 +399,11 @@ h1 {
   width: calc(100% - 30px);
 }
 
-.aboutPage {
+.aboutPage__collapseContainer {
   display: flex;
   flex-direction: column;
+  row-gap: 30px;
+  margin: 38px 0;
 }
 .aboutPage .collapse__btn {
   width: 80%;
@@ -509,12 +511,15 @@ h1 {
   .accomodationPage .details .collapse__btn, .accomodationPage .details .collapse__text--hidden, .accomodationPage .details .collapse__text--shown {
     width: 100%;
   }
+  .aboutPage__collapseContainer {
+    row-gap: 20px;
+  }
   .aboutPage .collapse__btn {
-    width: 100%;
+    width: calc(100% - 20px);
   }
   .aboutPage .collapse__text--shown,
   .aboutPage .collapse__text--hidden {
-    width: calc(100% - 2px);
+    width: calc(100% - 22px);
   }
   .errorpage__title {
     font-size: 96px;
