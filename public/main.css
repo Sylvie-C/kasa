@@ -412,6 +412,7 @@ h1 {
 }
 
 .errorpage {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -419,14 +420,14 @@ h1 {
   row-gap: 48px;
 }
 .errorpage__title {
-  font-size: 128px;
+  font-size: 288px;
   font-weight: bolder;
 }
 .errorpage__text {
-  font-size: 16px;
+  font-size: 36px;
 }
 .errorpage__link {
-  font-size: 12px;
+  font-size: 18px;
   margin: 16px;
 }
 
@@ -516,8 +517,13 @@ h1 {
     width: calc(100% - 2px);
   }
   .errorpage__title {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 96px;
+  }
+  .errorpage__text {
+    font-size: 18px;
+  }
+  .errorpage__link {
+    font-size: 14px;
   }
 }
 @media ((min-width: 769px) and (max-width: 1024px)) {
