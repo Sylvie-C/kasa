@@ -17,7 +17,14 @@ function Accomodation() {
     useEffect (
         () => {
             const testValue = galleryResource.some(elt => elt.id === accomodationId) ;
-            const accomodationData = galleryResource.filter(elt => elt.id === accomodationId)[0] ; 
+            const accomodationData = galleryResource.filter(elt => elt.id === accomodationId)[0] ;
+
+            // host name with line return between name and surname
+            const hostInput = accomodationData.host.name.split(" ") ; 
+            let hostName = [] ; 
+            hostName[0] = hostInput[0] ; 
+            hostName[1] = <br key={`breakline01`}/> ; 
+            hostName[2] = hostInput[1] ;
 
             if (!testValue) { navigate ("/error") }
             else { 
@@ -48,7 +55,17 @@ function Accomodation() {
                     }
                 </div>
                 <div className="info__owner">
-                        {accomodationData && <p>{accomodationData.host.name}</p>}
+                        {accomodationData && 
+                            <p>
+                                {
+                                    accomodationData.host.name.split(" ").map(
+                                        (elt , index) => (
+                                            <span key={`host${index}`}>{elt}{<br/>}</span>
+                                        )
+                                    )
+                                }
+                            </p>
+                        }
                         {   accomodationData && 
                             <div className="ownerPix">
                                 <img src={accomodationData.host.picture} alt="host"/>
@@ -70,7 +87,20 @@ function Accomodation() {
 
             <div className="details">
                 <Collapse id="description" title="Description" text={accomodationData && accomodationData.description} />
-                <Collapse id="equipments" title="Équipements" text={accomodationData && accomodationData.equipments} />
+                <Collapse   id="equipments" 
+                            title="Équipements" 
+                            text={
+                                accomodationData && 
+                                accomodationData.equipments.map( 
+                                    (elt , index) => (
+                                        <span key={`eq${index}`}>
+                                            {elt}
+                                            {index !== accomodationData.equipments.length - 1 && <br />}
+                                        </span>
+                                    )
+                                )
+                            } 
+                />
             </div>
         </div>
     )

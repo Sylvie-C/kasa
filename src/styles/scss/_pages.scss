@@ -73,7 +73,7 @@
 
     .info {
         display: grid;
-        grid-template-columns: 85% 15%;
+        grid-template-columns: 80% 20%;
 
         &__titles {
             display: flex;
@@ -361,5 +361,11 @@
 @media ((min-width: 769px) and (max-width: 1024px)) {
     .gallery {
         grid-template-columns: repeat(2, $kasa-accomodationCardWidth);
+    }
+
+    .accomodationPage {
+        .info {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
