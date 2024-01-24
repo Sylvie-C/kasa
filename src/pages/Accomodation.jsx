@@ -30,71 +30,63 @@ function Accomodation() {
 
     return (
         <div className="pageContent accomodationPage">
-            {
-                accomodationData && 
-                <Slider pictures= {accomodationData.pictures} 
-                location= {accomodationData.location} />
-            }
+        
+            { accomodationData ? (
+                <>
+                    <Slider pictures= {accomodationData.pictures} location= {accomodationData.location} />
 
-            <div className="info">
-                <div className="info__titles">
-                    {
-                        accomodationData && 
-                        <h1>{accomodationData.title}</h1>
-                    }
-                    {
-                        accomodationData && 
-                        <p>{accomodationData.location}</p>
-                    }
-                </div>
-                <div className="info__owner">
-                        {accomodationData && 
-                            <p>
-                                {
-                                    accomodationData.host.name.split(" ").map(
-                                        (elt , index) => (
-                                            <span key={`host${index}`}>{elt}{<br/>}</span>
+                    <div className="info">
+                        <div className="info__titles">
+                            {<h1>{accomodationData.title}</h1>}
+                            {<p>{accomodationData.location}</p>}
+                        </div>
+
+                        <div className="info__owner">
+                            {<p>
+                                    {
+                                        accomodationData.host.name.split(" ").map(
+                                            (elt , index) => (
+                                                <span key={`host${index}`}>{elt}{<br/>}</span>
+                                            )
                                         )
-                                    )
-                                }
-                            </p>
-                        }
-                        {   accomodationData && 
-                            <div className="ownerPix">
+                                    }
+                                </p>
+                            }
+                            {<div className="ownerPix">
                                 <img src={accomodationData.host.picture} alt="host"/>
                             </div>
-                        }
-                    </div>
-                    <div className="info__tags">
-                        {   accomodationData && 
-                            accomodationData.tags.map ( (elt , index) => (
-                                <p key= { `tag${index} `} > {elt} </p>
-                            ) )
-                        }
-                    </div>
-                    {
-                        accomodationData && 
-                        <StarRate rate={accomodationData.rating} />
-                    }
-            </div>
+                            }
+                        </div>
 
-            <div className="details">
-                <Collapse id="description" title="Description" text={accomodationData && accomodationData.description} />
-                <Collapse   id="equipments" 
-                            title="Équipements" 
-                            text={
-                                accomodationData && 
-                                accomodationData.equipments.map( 
-                                    (elt , index) => (
-                                        <span key={`eq${index}`}>
-                                            {elt}
-                                            {index !== accomodationData.equipments.length - 1 && <br />}
-                                        </span>
-                                    )
-                                )
-                            } 
-                />
-            </div>
+                        <div className="info__tags">
+                            {accomodationData.tags.map ( (elt , index) => (
+                                    <p key= { `tag${index} `} > {elt} </p>
+                                ) )
+                            }
+                        </div>
+                    </div>
+
+                    <StarRate rate={accomodationData.rating} />
+                    
+                    <div className="details">
+                        <Collapse id="description" title="Description" text={accomodationData.description} />
+                        <Collapse   id="equipments" 
+                                    title="Équipements" 
+                                    text={
+                                        accomodationData.equipments.map( 
+                                            (elt , index) => (
+                                                <span key={`eq${index}`}>
+                                                    {elt}
+                                                    {index !== accomodationData.equipments.length - 1 && <br />}
+                                                </span>
+                                            )
+                                        )
+                                    } 
+                        />
+                    </div>
+                </>
+                ) :  null
+            } 
         </div>
     )
 }
