@@ -19,13 +19,6 @@ function Accomodation() {
             const testValue = galleryResource.some(elt => elt.id === accomodationId) ;
             const accomodationData = galleryResource.filter(elt => elt.id === accomodationId)[0] ;
 
-            // host name with line return between name and surname
-            const hostInput = accomodationData.host.name.split(" ") ; 
-            let hostName = [] ; 
-            hostName[0] = hostInput[0] ; 
-            hostName[1] = <br key={`breakline01`}/> ; 
-            hostName[2] = hostInput[1] ;
-
             if (!testValue) { navigate ("/error") }
             else { 
                 setAccomodationData(accomodationData)
