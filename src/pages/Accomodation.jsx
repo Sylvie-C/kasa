@@ -64,9 +64,9 @@ function Accomodation() {
                                 ) )
                             }
                         </div>
-                    </div>
 
-                    <StarRate rate={accomodationData.rating} />
+                        <StarRate rate={accomodationData.rating} />
+                    </div>
                     
                     <div className="details">
                         <Collapse id="description" title="Description" text={accomodationData.description} />
