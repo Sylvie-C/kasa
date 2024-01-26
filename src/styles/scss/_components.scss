@@ -1,0 +1,322 @@
+@use './normalize' as *;
+@use './variables' as *;
+
+
+// Header
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 45px 100px;
+
+    &__link {
+        color: $kasa-color ;
+        font-size: 24px;
+        margin-left: 57px;
+
+        text-decoration: none;
+    }
+
+    &__link.active {
+        text-decoration: underline;
+    }
+
+    &__logo {
+        width: 192px;
+    }
+}
+
+
+// Hero (Home page, About page)
+
+.hero {
+    height: 223px;
+    border-radius: $kasa-bigRadius;
+
+    background-size: cover;
+    background-position: bottom;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        font-family: inherit;
+        color: white;
+        padding: 0 16px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+        border-radius: $kasa-bigRadius;
+    }
+}
+
+.homeHero {
+    background-image: url("../../assets/images/home-bannerImg.png");
+}
+
+.aboutHero {
+    background-image: url("../../assets/images/about-bannerImg.png");
+}
+
+
+// Collapse component (About page, Accomodation page)
+// Default style : 
+.collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__btn {
+
+        width: $kasa-collapseDefaultW;
+        background: $kasa-color;
+        border-radius: $kasa-smallRadius;
+        padding: 10px 20px 10px 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btnText {
+            color: white;
+            font-family: montserrat;
+        }
+    }
+
+    &__text--hidden,
+    &__text--shown {
+        font-size: 14px;
+        width: calc($kasa-collapseDefaultW - 2px);
+    }
+
+    &__text--hidden {
+        max-height: 0px;
+        overflow: hidden;
+        opacity: 0;
+
+        transition: all 0.3s;
+    }
+
+    &__text--shown {
+
+        text-align: justify;
+        background: $kasa-lightgray;
+        border-radius: 0px 0px 5px 5px;
+
+        padding: 10px;
+
+        max-height: 200px;
+        opacity: 1;
+
+        transition: all 0.3s;
+    }
+}
+
+.collapseArrow {
+    width: 22px;
+    color: white;
+    transition: transform 0.3s;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.rotateCollapseArrow {
+    transform: rotate(180deg);
+}
+
+
+// Slider component
+.slider {
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__coverImg {
+        width: 100%;
+        height: 415px;
+        object-fit: cover;
+        object-position: 0% 60%;
+        border-radius: $kasa-bigRadius;
+    }
+
+    &__arrowsContainer {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .arrowLeft,
+        .arrowRight {
+            width: 96px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .arrowRight {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__hideControls {
+        display: none;
+    }
+
+    &__number {
+        color: white;
+        position: absolute;
+        bottom: 0;
+        margin: 25px;
+    }
+}
+
+.accomodationPage {
+    .info {
+        &__rate {
+            display: flex;
+            justify-content: flex-end;
+            padding: 4px;
+
+            svg {
+                width: 36px;
+            }
+
+            .plainStar,
+            .emptyStar {
+                margin: 0 4px;
+            }
+
+            .plainStar {
+                fill: $kasa-color;
+            }
+
+            .emptyStar {
+                fill: lightgray;
+            }
+        }
+    }
+}
+
+
+// Footer
+
+.footer {
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 64px;
+    padding-bottom: 32px;
+
+    &__container {
+        color: white;
+        font-family: montserrat;
+        font-size: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 122px;
+        margin-bottom: 30px;
+    }
+}
+
+// ---- MEDIA QUERIES ----
+
+@media (max-width: 768px) {
+
+    .header {
+        margin: 20px;
+
+        &__logo {
+            width: 96px;
+        }
+
+        &__link {
+            font-size: 12px;
+            margin-left: 32px;
+            text-transform: uppercase;
+        }
+    }
+
+    .hero {
+        width: 100%;
+        height: 111px;
+        border-radius: $kasa-smallRadius;
+
+        &__title {
+            border-radius: $kasa-smallRadius;
+            justify-content: flex-start;
+        }
+    }
+
+    .collapse {
+
+        &__btn {
+            width: $kasa-collapseDefaultW;
+            font-size: 12px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        &__text--shown,
+        &__text--hidden {
+            font-size: 12px;
+        }
+    }
+
+    .collapseArrow {
+        width: 16px;
+    }
+
+    .slider {
+        &__coverImg {
+            height: 255px;
+        }
+
+        .arrowLeft,
+        .arrowRight {
+            width: 24px;
+        }
+
+        &__number {
+            font-size: 12px;
+            margin: 16px;
+        }
+    }
+
+    .footer {
+        padding: 64px 130px;
+
+        &__container {
+            font-size: 12px;
+            width: 100px;
+            text-align: center;
+        }
+
+        &__logo {
+            margin-bottom: 10px;
+        }
+    }
+}

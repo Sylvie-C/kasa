@@ -1,0 +1,371 @@
+@use "./variables" as *;
+
+// -------  HOME PAGE
+
+// Home page pictures Gallery
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, $kasa-accomodationCardWidth);
+    row-gap: 50px;
+    column-gap: 60px;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 56px 50px 43px 56px;
+    margin-top: 43px;
+    margin-bottom: 50px;
+
+    border-radius: $kasa-bigRadius;
+    background: $kasa-lightgray;
+
+    &__card {
+        text-decoration: none;
+        border-radius: $kasa-smallRadius;
+
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
+
+        transform: scale(1);
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(0.98);
+            filter: drop-shadow(-5px -5px 10px $kasa-cardShadow);
+        }
+
+        img {
+            border-radius: $kasa-smallRadius;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
+
+        p {
+            position: absolute;
+            bottom: 0;
+            margin: 20px;
+            border-radius: 8px;
+
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            line-height: 28px;
+        }
+    }
+
+    &__cardLayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent 70%, black);
+    }
+}
+
+
+// -------  ACCOMODATION PAGE 
+
+.accomodationPage {
+
+    .info {
+        display: grid;
+        grid-template-columns: 80% 20%;
+
+        &__titles {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            h1 {
+                font-size: 36px;
+                line-height: 51px;
+                margin-top: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        &__owner {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            margin: 24px 0;
+        }
+
+        &__tags {
+
+            display: flex;
+            column-gap: 10px;
+            height: 25px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+
+            p {
+                font-size: 14px;
+                color: white;
+                text-align: center;
+                background: $kasa-color;
+
+                border-radius: $kasa-smallRadius;
+                min-width: $kasa-tagsMinWidthD;
+                padding: 4px;
+            }
+
+        }
+    }
+
+    .info__owner {
+        p {
+            font-size: 18px;
+            text-align: right;
+            line-height: 24px;
+        }
+
+        .ownerPix {
+            width: $kasa-ownerPixWidth;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0 8px;
+
+            background: lightgray;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    // Collapse component display
+    .details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 76px;
+
+        .collapse {
+
+            &__btn,
+            &__text--hidden,
+            &__text--shown {
+                width: calc($kasa-collapseDefaultW - 30px); // padding of 10px + 20px left/right
+            }
+        }
+    }
+}
+
+
+// -------  ABOUT PAGE 
+
+.aboutPage {
+
+    &__collapseContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        margin: 38px 0;
+    }
+
+    .collapse__btn {
+        width: $kasa-collapseAboutW;
+    }
+
+    .collapse__text--shown,
+    .collapse__text--hidden {
+        width: calc($kasa-collapseAboutW - 2px);
+    }
+}
+
+
+// -------  404 ERROR PAGE
+
+.errorpage {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 48px;
+    row-gap: 48px;
+
+    &__title {
+        font-size: 288px;
+        font-weight: bolder;
+    }
+
+    &__text {
+        font-size: 36px;
+    }
+
+    &__link {
+        font-size: 18px;
+        margin: 16px;
+    }
+}
+
+
+// -------  MEDIA QUERIES  ------- 
+
+@media (max-width: 768px) {
+
+    // HOME PAGE
+    .gallery {
+        grid-template-columns: none;
+        gap: 16px;
+        margin-top: 22px;
+        margin-bottom: 0px;
+        padding: 0;
+
+        border-radius: 0px;
+        background: none;
+
+        p {
+            margin: 15px 20px;
+        }
+    }
+
+    // ACCOMODATION PAGE
+    .accomodationPage {
+        &__coverImg {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .arrowContainer {
+
+            .arrowLeft,
+            .arrowRight {
+                width: 24px;
+            }
+        }
+
+        .info {
+            grid-template-columns: repeat(2, 0.5fr);
+
+            &__titles {
+                grid-column: span 2;
+
+                h1 {
+                    font-size: 18px;
+                    line-height: 25px;
+                    margin-top: 15px;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
+            }
+
+            &__tags {
+                order: 02;
+                grid-column: span 2;
+                align-items: center;
+
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 10px;
+
+                p {
+                    font-size: 10px;
+                    min-width: $kasa-tagsMinWidthM;
+                }
+            }
+
+            &__owner {
+                order: 04;
+
+                p {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+
+                .ownerPix {
+                    font-size: 8px;
+                    width: calc($kasa-ownerPixWidth /2);
+                }
+            }
+
+            &__rate {
+                order: 03;
+                justify-content: flex-start;
+                align-items: center;
+
+                svg {
+                    width: 16px;
+                }
+            }
+        }
+
+        .details {
+            grid-template-columns: 100%;
+            row-gap: 20px;
+            column-gap: 0;
+
+            .collapse {
+
+                &__btn,
+                &__text--hidden,
+                &__text--shown {
+                    width: $kasa-collapseDefaultW;
+                }
+            }
+        }
+    }
+
+
+    // ABOUT PAGE 
+    .aboutPage {
+        &__collapseContainer {
+            row-gap: 20px;
+        }
+
+        .collapse__btn {
+            width: calc($kasa-collapseDefaultW - 20px); // padding left/right : 10px + 10px
+        }
+
+        .collapse__text--shown,
+        .collapse__text--hidden {
+            width: calc($kasa-collapseDefaultW - 22px);
+        }
+    }
+
+
+    // ERROR PAGE
+    .errorpage {
+        &__title {
+            font-size: 96px;
+        }
+
+        &__text {
+            font-size: 18px;
+        }
+
+        &__link {
+            font-size: 14px;
+        }
+    }
+}
+
+@media ((min-width: 769px) and (max-width: 1024px)) {
+    .gallery {
+        grid-template-columns: repeat(2, $kasa-accomodationCardWidth);
+    }
+
+    .accomodationPage {
+        .info {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

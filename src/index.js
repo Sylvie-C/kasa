@@ -8,8 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
-import Apropos from "./pages/Apropos.jsx";
-import Accomodation from "./pages/Accomodation.jsx";
+import About from "./pages/About.jsx";
+import Accomodation from "./pages/Accomodation.jsx";  
 import Error from "./pages/Errorpage.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,9 +18,10 @@ root.render(
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/apropos" element={<Apropos />} />
-                <Route path="/accomodation" element={<Accomodation />} />
+                <Route index element={<Home />} />
+                <Route path="/apropos" element={<About />} />
+                <Route path="/accomodation/:accomodationId" element={<Accomodation />} />
+                <Route path="/error" element={<Error />} />
                 <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
